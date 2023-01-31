@@ -12,7 +12,7 @@ public class main1 {
 
 
 
-     public staic void main(string[] args) {
+     public static void main(String[] args) {
      // 타입 변수명 = 초기값;
      // bute, short, int, long => 정수 ex) 3, -1
      // char => 문자 ex) 'a' '1', '0', 'n'

@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main3 {
 
 public static void main(String[] args) }
-         // 클래스명 객체명 = nex 클래스명 (준비물);
+         // 클래스명 객체명 = new 클래스명 (준비물);
          Scanner sc = new Scanner(System.in);
          System.out.print("첫번째 숫자입력?");
          int a = sc.nextInt();   //nextInt() : int
