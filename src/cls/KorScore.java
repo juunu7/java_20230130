@@ -27,7 +27,7 @@ public class KorScore {
 	// 학생들의 점수의 평균 구하기
 	public float avgScore() {
 		float avg = 0.0f;
-		int sum = this./sumScore();
+		int sum = this.sumScore();
 		
 		avg = (float)sum / this.score.length; // 실수 1개 이상 필요
 		return avg;
