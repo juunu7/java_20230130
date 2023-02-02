@@ -38,9 +38,8 @@ public class Item {
 	
 	// 수량이 n개 미만이면 n개로 변경하는 메소드
 	public int nQuantity(int i) {
-		
-		if(this.Quantity( < i) {
-			this quantity = i;
+		if(this.quantity < i) {
+			this.quantity = i;
 			
 		}
 		return this.quantity;
@@ -62,7 +61,7 @@ public class Item {
 	// 물품설명이 20자 이상이면 ...으로 변환하는 메소드
 	public String over20() {
 		if (this.content.length()>=20) {
-			return (this.content.substring(0, 20)+ "...")
+			return (this.content.substring(0, 20)+ "...");
 					
 		}
 		return this.content;
