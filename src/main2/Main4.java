@@ -16,8 +16,7 @@ public class Main4 {
         
       // 2. 교수등록
       Professor professor = new Professor(1, "a", "603", new Date());
-   
-      
+         
       // 3. 과목등록
       Course course = new Course();
       course.setCode(4000);

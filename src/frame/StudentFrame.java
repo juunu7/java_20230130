@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JCheckBox;
 
 public class StudentFrame extends JFrame{
 	private JTextField textField;
