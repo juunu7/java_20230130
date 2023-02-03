@@ -15,7 +15,7 @@ public class Main1 {
 		
 		
 		int age = 13;
-		char[] = {'h', 'o', 'n', 'g'};
+		char[] cs = {'h', 'o', 'n', 'g'};
 		
 		// if(조건)  age == 50, age != 50, age >=50, age <=50
 		// if(조건 && 조건) &&and || or ! not
@@ -33,7 +33,7 @@ public class Main1 {
 			// 1 2 3 4 5
 		}
 		
-		for (i=1, i<=1000; i++) { // 1 2 3 ... 1000 1001 (x)
+		for (i=1; i<=1000; i++) { // 1 2 3 ... 1000 1001 (x)
 			if(i>=10) {
 				// 반복문을 강제로 종료시킴
 				// break; 는 강제종료

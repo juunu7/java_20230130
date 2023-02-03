@@ -6,9 +6,9 @@ package main;
 /* 여러줄 */
 // 폰트 크기 확대 ctrl + (+더하기), (-빼기)
 
-public class main1 {
+	public class main1 {
+		
 
-}
 
 
 
@@ -47,9 +47,9 @@ public class main1 {
       int d3 = d/100%10; // 25 % 10 = 5
       int d4 = d/1000; //2
       
-      int d4 = d1*1000 + d2*100 + d3*10 + d4;
+      int d5 = d1*1000 + d2*100 + d3*10 + d4;
       System.out.println(d5); //1452
+     }
       
-      
-    		 
+}
       

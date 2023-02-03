@@ -26,10 +26,10 @@ public class MemberMain {
 		System.out.println( member.toString() );
 		
 		// 2. 세팅된 이름값이 유효한지 확인하기
-		boolean result = member.invalidName();
+		boolean result = member .invalidName();
 		System.out.println(result);
 		
-		boolean result1 = member.invalidPhone ();
+		boolean result1 = member.invalidPhone();
 		System.out.println(result1);
 		
 		

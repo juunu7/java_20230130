@@ -4,8 +4,10 @@ import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-// extends ºÎ¸ðÅ¬·¡½º
+// extends ï¿½Î¸ï¿½Å¬ï¿½ï¿½ï¿½ï¿½
 public class MainFrame extends JFrame {
 	public MainFrame() {
 		
@@ -16,6 +18,11 @@ public class MainFrame extends JFrame {
 		menuBar.add(mnNewMenu);
 		
 		JMenuItem mntmNewMenuItem_1 = new JMenuItem("\uD559\uC0DD\uB4F1\uB85D");
+		mntmNewMenuItem_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new JoinFrame();
+			}
+		});
 		mnNewMenu.add(mntmNewMenuItem_1);
 		
 		JMenuItem mntmNewMenuItem = new JMenuItem("\uD559\uC0DD\uC815\uBCF4\uC218\uC815");

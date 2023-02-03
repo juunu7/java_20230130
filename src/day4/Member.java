@@ -31,7 +31,7 @@ public class Member {
 		this.regdate = regdate;
 	}
 	
-	// getter, setter, tostring 생성하기 lombok 사용하기
+	// getter, setter, toString 생성하기 lombok 사용하기
 
 	// 이름의 길이가 유효한지 확인하는 메소드 만들기(2~4자만 가능)
 	public boolean invalidName() {
