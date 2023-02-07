@@ -42,13 +42,13 @@ public class ItemDB {
 			doc.append("price", item.getPrice());
 			doc.append("quantity", item.getQuantity());
 			doc.append("date", item.getDate());
-			
+
 			InsertOneResult result = this.collection.insertOne(doc);
 			System.out.println(result.toString());
 			return 1;
 
 		} catch (Exception e) {
-			e.printStackTrace(); 
+			e.printStackTrace();
 			return -1;
 		}
 	}
@@ -56,10 +56,10 @@ public class ItemDB {
 	// 전체물품 출력
 	public void printItems() {
 		// MongoCursor<Document> => ArrayList<Document>
-		// size을 알 수 없음.		 => size 알 수 있음.
+		// size을 알 수 없음. => size 알 수 있음.
 		MongoCursor<Document> list = this.collection.find().cursor();
-		while( list.hasNext()) {// 꺼낼것이 있나요??
-			Document doc = list.next(); //꺼내기 (전체개수 1개 줄어들었음)
+		while (list.hasNext()) {// 꺼낼것이 있나요??
+			Document doc = list.next(); // 꺼내기 (전체개수 1개 줄어들었음)
 			System.out.println("코드 => " + doc.getLong("_id"));
 			System.out.println("물품명 => " + doc.getString("name"));
 			System.out.println("물품내용 => " + doc.getString("content"));
