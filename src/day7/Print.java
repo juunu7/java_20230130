@@ -9,4 +9,9 @@ public class Print {
 		
 	}
 
+	public void output(BoardDAO obj) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

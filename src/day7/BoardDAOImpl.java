@@ -61,11 +61,11 @@ public class BoardDAOImpl implements BoardDAO {
 			// Board 타입의 값들을 Document로 복사 하세요.
 			Document doc1 = new Document();
 			doc1.append("_id", board.getBrdNo());
-			doc1.append("brdTitle", board.getBrdNo());
-			doc1.append("brdContent", board.getBrdNo());
-			doc1.append("brdWriter", board.getBrdNo());
-			doc1.append("brdHit", board.getBrdNo());
-			doc1.append("brdDate", board.getBrdNo());
+			doc1.append("title", board.getBrdTitle());
+			doc1.append("content", board.getBrdContent());
+			doc1.append("writer", board.getBrdWriter());
+			doc1.append("hit", board.getBrdHit());
+			doc1.append("date", board.getBrdDate());
 
 			InsertOneResult result = this.boardColl.insertOne(doc1);
 			System.out.println(result);
@@ -73,27 +73,14 @@ public class BoardDAOImpl implements BoardDAO {
 			// AcknowledgedInsertOneResult{insertedId=BsonInt64{value=4}}
 			if (result.getInsertedId().asInt64().getValue() == board.getBrdNo()) {
 
-				return 1; // 정확하게 데이터가 추가된 경우 1을 반환
-
 			}
-			return 0; // 실행은 되었으나 추가하지 못한 경우에 0을 반환
-		} catch (Exception e) {
-			e.printStackTrace();
-			return -1;
+				return 0; // 실행은 되었으나 추가하지 못한 경우에 0을 반환
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+				return -1; // 실행되지 못할경우 -1, 치명적 오류, 시스템 오류 등...
+			}
 		}
-	}
-
-	@Override
-	public int updateBoard(Board board) {
-		//
-		return 0;
-	}
-
-	@Override
-	public int deleteBoard(long no) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 	@Override
 	public Board selectBoardOne(long no) {
@@ -117,7 +104,6 @@ public class BoardDAOImpl implements BoardDAO {
 		}
 	}
 
-	
 	@Override
 	public List<Board> selectBoardList() {
 		// Board타입을 n개 보관할 수 있는 동적배열
@@ -126,8 +112,8 @@ public class BoardDAOImpl implements BoardDAO {
 			// 글번호를 기준으로 내림차순(-1), 오름차순(1)
 			Bson sort = Filters.eq("_id", -1);
 			MongoCursor<Document> docs = this.boardColl.find().sort(sort).cursor();
-			while( docs.hasNext()) { // docs에 꺼낼 요소가 존재하나요?
-				Document doc = docs.next(); //1개 꺼내기(전체 개수 1감소했음)
+			while (docs.hasNext()) { // docs에 꺼낼 요소가 존재하나요?
+				Document doc = docs.next(); // 1개 꺼내기(전체 개수 1감소했음)
 				Board board = new Board();
 				board.setBrdNo(doc.getLong("_id"));
 				board.setBrdTitle(doc.getString("title"));
@@ -135,27 +121,39 @@ public class BoardDAOImpl implements BoardDAO {
 				board.setBrdWriter(doc.getString("writer"));
 				board.setBrdHit(doc.getLong("hit"));
 				board.setBrdDate(doc.getDate("date"));
-				
+
 				// Document => Board 복사
 				list.add(board);
 			}
-		}
-		catch (Exception e) {
-			//오류발생처리
+		} catch (Exception e) {
+			// 오류발생처리
 			e.printStackTrace();
-			list.add(board);	
+			list = null;
+		} finally {
+			// 정상이든 오류든 모두 실행
 		}
-		finally {
-			//정상이든 오류든 모두 실행
-		}	
 		return list;
 	}
-	
-	
+
+	// 조회수가 hit보다 이하 조회해서 메인에서 출력하기.
 	@Override
 	public List<Board> selectBoardHitList(long hit) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	// 글번호와 제목, 내용, 작성자를 전송하면 해당글번호의 제목, 내용, 작성자를 변경하기
+	@Override
+	public int updateBoard(Board board) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	// 글번호가 전달되면 1개 삭제하기
+	@Override
+	public int deleteBoard(long no) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	@Override
@@ -164,6 +162,5 @@ public class BoardDAOImpl implements BoardDAO {
 		return null;
 	}
 	
-	
-
 }
+

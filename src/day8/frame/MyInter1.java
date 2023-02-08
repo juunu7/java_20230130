@@ -1,4 +1,6 @@
-package day7;
+package day8.frame;
+
+import day7.MyListener;
 
 public class MyInter1 implements MyListener {
 
