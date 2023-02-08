@@ -1,4 +1,4 @@
-package day8.frame;
+package day8;
 
 import day7.MyListener;
 

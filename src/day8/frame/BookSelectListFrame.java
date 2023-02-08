@@ -2,7 +2,6 @@ package day8.frame;
 
 import java.awt.BorderLayout;
 import java.util.List;
-import java.util.Vector;
 
 import javax.swing.JDialog;
 import javax.swing.JScrollPane;
