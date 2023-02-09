@@ -1,6 +1,8 @@
-package day7;
+package day9;
+
 
 import java.util.Date;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,4 +23,9 @@ public class Board {
 	private String brdWriter = ""; // 작성자
 	private long brdHit = 0L; // 조회수
 	private Date brdDate = null; // 등록일자
+	
+	private long replyCount = 0; //답글개수를 보관할 변수
+	private List<Long> replyNoList = null;// n개의 답글 번호 보관할 변수
+	
+	
 }

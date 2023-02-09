@@ -21,6 +21,7 @@ public class MemberMain {
 	}
 }
 
+
 		
 		// 현재 클래스 가지고 있는 값을 확인
 		System.out.println( member.toString() );
@@ -48,10 +49,8 @@ public class MemberMain {
 		
 		
 		//member객체 결과값을 받은 변수 출력
-		System.out.println("nameret" : "nameret");
+		System.out.println("nameret", "nameret");
 		
-		
-
 		
 		
 	}
