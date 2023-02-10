@@ -1,4 +1,4 @@
-package day4;
+package day10;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -30,7 +30,7 @@ public class Address {
 		this.memberid = memberid;
 	}
 
-	// ÄÚµå´Â 1000~9999 »çÀÌÀÎÁö È®ÀÎ
+	// ï¿½Úµï¿½ï¿½ 1000~9999 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
 	public boolean code() {
 		if (1000 <= this.code && this.code <= 9999) {
 			return true;
@@ -39,7 +39,7 @@ public class Address {
 
 	}
 
-	// ÁÖ¼Ò´Â 100¹Ì¸¸ÀÎÁö È®ÀÎ
+	// ï¿½Ö¼Ò´ï¿½ 100ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
 	public boolean invalideAddress() {
 		// String
 		if (this.address.length() < 100) {
@@ -48,7 +48,7 @@ public class Address {
 		return false;
 	}
 
-	// ¿ìÆí¹øÈ£°¡ 5ÀÚ¸®ÀÎÁö È®ÀÎÇÏ´Â ¸Þ¼Òµå
+	// ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ 5ï¿½Ú¸ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Þ¼Òµï¿½
 	public boolean invalidPostcode() {
 		if (this.postcode.length() == 5) {
 			return true;
@@ -56,7 +56,7 @@ public class Address {
 		return false;
 	}
 
-	// ³¯Â¥¿¡¼­ ³â¸¸ ¹ÝÈ¯ÇÏ±â(¹®ÀÚ·Î)
+	// ï¿½ï¿½Â¥ï¿½ï¿½ï¿½ï¿½ ï¿½â¸¸ ï¿½ï¿½È¯ï¿½Ï±ï¿½(ï¿½ï¿½ï¿½Ú·ï¿½)
 	public String getYear() {
 		SimpleDateFormat obj = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String str = obj.format(this.regdate);
@@ -66,8 +66,8 @@ public class Address {
 		return str.substring(0, 4); // 0123 => 2023
 	}
 
-	// ³¯Â¥¿¡¼­ ¿ù¸¸ ¹ÝÈ¯ÇÏ±â(¹®ÀÚ·Î)
+	// ï¿½ï¿½Â¥ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ï±ï¿½(ï¿½ï¿½ï¿½Ú·ï¿½)
 
-	// ³¯Â¥¿¡¼­ ÀÏ¸¸ ¹ÝÈ¯ÇÏ±â(¹®ÀÚ·Î)
+	// ï¿½ï¿½Â¥ï¿½ï¿½ï¿½ï¿½ ï¿½Ï¸ï¿½ ï¿½ï¿½È¯ï¿½Ï±ï¿½(ï¿½ï¿½ï¿½Ú·ï¿½)
 
 }

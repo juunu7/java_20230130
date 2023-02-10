@@ -2,6 +2,8 @@ package day4;
 
 import java.util.Date;
 
+import day10.Member;
+
 public class MemberMain {
 	public static void main(String[] args) {
 		// 1. 객체 생성 (값 세팅)
@@ -50,8 +52,7 @@ public class MemberMain {
 		
 		//member객체 결과값을 받은 변수 출력
 		System.out.println("nameret", "nameret");
-		
-		
+	
 		
 	}
 

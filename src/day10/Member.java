@@ -1,4 +1,4 @@
-package day4;
+package day10;
 
 import java.util.Date;
 
@@ -14,7 +14,8 @@ public class Member {
 	private String password = null;
 	private String name = null;
 	private String phone = null;
-	private String role = null; //ÀÌ°ÍÀº ±ÇÇÑ °í°´(C) ¶Ç´Â ÆÇ¸ÅÀÚ (S)¸¸ °¡´É
+	private String role = null;  // ì´ê²ƒì€ ê¶Œí•œ ê³ ê° c ë˜ëŠ” íŒë§¤ìž s
+	private int age = 0;
 	private Date regdate = null;
 
 	
@@ -31,19 +32,19 @@ public class Member {
 		this.regdate = regdate;
 	}
 	
-	// getter, setter, toString »ý¼ºÇÏ±â lombok »ç¿ëÇÏ±â
+	// getter, setter, toString ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ lombok ï¿½ï¿½ï¿½ï¿½Ï±ï¿½
 
-	// ÀÌ¸§ÀÇ ±æÀÌ°¡ À¯È¿ÇÑÁö È®ÀÎÇÏ´Â ¸Þ¼Òµå ¸¸µé±â(2~4ÀÚ¸¸ °¡´É)
+	// ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì°ï¿½ ï¿½ï¿½È¿ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Þ¼Òµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½(2~4ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½)
 	public boolean invalidName() {
 		if( this.name.length() >= 2 
 				&& this.name.length() <=4 ) {
-			return true; //¸Þ¼ÒµåÀÇ Á¾·á°¡ µÊ. 
+			return true; //ï¿½Þ¼Òµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½á°¡ ï¿½ï¿½. 
 		}
 		return false;
 	}
 
 	
-	// ÈÞ´ëÆù ¹øÈ£ ±æÀÌ°¡ Á¤È®ÇÑÁö È®ÀÎÇÏ´Â ¸Þ¼Òµå ¸¸µé±â
+	// ï¿½Þ´ï¿½ï¿½ï¿½ ï¿½ï¿½È£ ï¿½ï¿½ï¿½Ì°ï¿½ ï¿½ï¿½È®ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Þ¼Òµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 	public int invalidPhone() {
 		if(this.phone.length() == 13) {
 			return 1;
@@ -52,9 +53,9 @@ public class Member {
 	}
 	
 	
-		// ±ÇÇÑ Á¤º¸°¡ C¿Í S·Î¸¸ µÇ¾î ÀÖ´ÂÁö È®ÀÎÇÏ´Â ¸Þ¼Òµå
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Cï¿½ï¿½ Sï¿½Î¸ï¿½ ï¿½Ç¾ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Þ¼Òµï¿½
 		public int invalidRole() {
-			// ¿ø½Ã Å¸ÀÔ int long
+			// ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ int long
 			// Long String ...
 			if( this.role.equals("C") 
 					|| this.role.equals("S")) {
@@ -63,7 +64,7 @@ public class Member {
 			return 0; 
 		}
 		
-	//id´Â ±æÀÌ°¡ 30ÀÚ ÀÌÇÏ °¡´ÉÇÑÁö È®ÀÎÇÏ´Â ¸Þ¼Òµå
+	//idï¿½ï¿½ ï¿½ï¿½ï¿½Ì°ï¿½ 30ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Þ¼Òµï¿½
 	public boolean invalidId() {
 		if( this.id.length() <= 30 ) {
 			return true;
@@ -71,7 +72,7 @@ public class Member {
 		return false;
 	}
 
-	// ¿¬¶ôÃ³ Á¤º¸°¡ 000-0000-0000ÀÎµ¥ 00000000000À¸·Î ¹ÝÈ¯ ÇÏ´Â ¸Þ¼Òµå
+	// ï¿½ï¿½ï¿½ï¿½Ã³ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 000-0000-0000ï¿½Îµï¿½ 00000000000ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ ï¿½Ï´ï¿½ ï¿½Þ¼Òµï¿½
 	public String changePhone() {
 		// 000-0000-0000 =>
 		// ret[0] => 000
