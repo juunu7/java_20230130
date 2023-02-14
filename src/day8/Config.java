@@ -8,7 +8,6 @@ public class Config {
 	
 	// 사용할 수 있는 인원정보
 	public static final int max = 10000;
-	
 	//게시글의 숫자를 10개
 	public static final int BOARDMAX = 10;
 	
@@ -20,11 +19,11 @@ public class Config {
 	
 	//시퀀스용 컬렉션 명칭(테이블)
 	public static final String RESEQUNCECOL = "sequence";
-	
-	
 	public static final String MEMBERCOL = "members";
 	public static final String ADDRESSCOL = "addresses";
+	public static final String TITANICCOL = "titanic";
 	
+
 		
 
 }

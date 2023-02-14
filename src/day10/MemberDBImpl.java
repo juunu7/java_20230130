@@ -49,9 +49,9 @@ public class MemberDBImpl implements MemberDB {
 			return 0;
 		} catch (Exception e) {
 			e.printStackTrace();
-
+			return -1;
 		}
-		return 0;
+		
 	}
 
 	@Override
