@@ -18,22 +18,21 @@
 	<!-- 주석문임 -->
 	<dependencies>
 		<dependency>
-        <groupId>org.mongodb</groupId>
-        <artifactId>mongodb-driver-sync</artifactId>
-        <version>4.2.2</version>
-    </dependency>
-    <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-simple</artifactId>
-        <version>1.7.30</version>
-        <scope>test</scope>
-    </dependency>
-    <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>1.7.30</version>
-    </dependency>
-
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongodb-driver-sync</artifactId>
+			<version>4.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.7.30</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.30</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<!-- json -->
 		<dependency>
@@ -48,12 +47,17 @@
 			<artifactId>json</artifactId>
 			<version>20220320</version>
 		</dependency>
-		
-		 <dependency>
-		<groupId>com.squareup.okhttp3</groupId>
-		<artifactId>okhttp</artifactId>
-		<version>3.10.0</version>
-	</dependency>
-
+		<dependency>
+			<!--okhttp -->
+			<groupId>com.squareup.okhttp3</groupId>
+			<artifactId>okhttp</artifactId>
+			<version>3.10.0</version>
+		</dependency>
+		<!--mqtt-->
+		<dependency>
+			<groupId>org.eclipse.paho</groupId>
+			<artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+			<version>1.2.5</version>
+		</dependency>
 	</dependencies>
 </project>

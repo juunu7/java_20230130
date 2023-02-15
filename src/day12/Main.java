@@ -6,7 +6,7 @@ import day11.Titanic;
 
 public class Main {
 
-	public static void main(String[] args) {
+	
 		// 객체 생성
 		TitanicDB tDB = new TitanicDBImpl();
 		Print print = new Print();
