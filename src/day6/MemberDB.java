@@ -86,10 +86,7 @@ public class MemberDB {
 	}
 
 	// 문제2) 나이가 n이상인 것만 필터
-	// 크거나 같다 gte
-	// 크다 gt
-	// 작거나 같다 lte
-	// 작다 lt
+	// 크거나 같다 gte / 크다 gt / 작거나 같다 lte / 작다 lt
 	public void printMemberAge(int n) {
 		Bson filter = Filters.gte("age", n);
 		printAction(filter);

@@ -4,64 +4,75 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-// 5¸íÀÇ ÇĞ»ıÀÇ ±¹¾î Á¡¼ö¸¦ º¸°üÇÏ°í Ã³¸®ÇÒ Å¬·¡½º
+// 5ëª…ì˜ í•™ìƒì˜ êµ­ì–´ì ìˆ˜ë¥¼ ë³´ê´€í•˜ê³  ì²˜ë¦¬í•  í´ë˜ìŠ¤
 @Setter
 @Getter
 @ToString
 public class KorScore {
 
-	private String[] student = new String[10];
-	private int[] score = new int[5];	
-	// getter, setter, toString ¸Ş¼Òµå°¡ Á¸ÀçÇÔ.
-	
-	// ÇĞ»ıµéÀÇ Á¡¼ö ÇÕ°è¸¦ ±¸ÇØÁÖ´Â ¸Ş¼Òµå
-	public int sumScore(  ) {
-		int sum = 0;
-		int i; //¹İº¹¹® ÀÓ½Ãº¯¼ö
-		for(i=0;i<score.length;i++) { // 0 1 2 3 4 (X 5)
-			sum = sum + this.score[i];
-		}
-		return sum;
-	}
-	
-	// ÇĞ»ıµéÀÇ Á¡¼öÀÇ Æò±Õ ±¸ÇÏ±â
-	public float avgScore() {
-		float avg = 0.0f;
-		int sum = this.sumScore();
-		
-		avg = (float)sum / this.score.length; // ½Ç¼ö 1°³ ÀÌ»ó ÇÊ¿ä
-		return avg;
-	}
-	
-	// 90Á¡ ÀÌ»óÀÎ »ç¶÷ÀÇ ÀÎ¿ø¼ö
-	public int score90() {
-		int cnt = 0;
-		int i;
-		for(i=0;i<this.score.length; i++){
-			if(this.score[i] >=90 ) {
-				cnt = cnt + 1;	
-			}
-		}
-		return cnt;	
-	}
-	
-	public int scoreMax() {
-		int i;
-		// 20, 99, 70, 98, 100
-		int max = this.score[0]; //20
-		for(i=1;i<this.score.length;i++) {
-			if(max < this.score[i] {
-				max = this.score[i]
-			}
-		}
-		return max;
-	}
-	
-	
-	public int scoreMin() {
-		int i;
-		int min = this.score[0];
-		
-		return min;
-	}
+   private String[] student = new String[5];
+   private int[] score = new int[5];
+   
+   // getter setter toString ë©”ì†Œë“œ ìƒì„±
+
+   // 3. ì „ì²´ í•©ê³„ë¥¼ êµ¬í•˜ê¸°
+   public int sumScore(){
+      int sum = 0;
+      
+      for(int i=0; i<this.score.length; i++) {
+         sum = sum + this.score[i];
+      }
+      return sum;
+   }
+
+   // 4. í‰ê· 
+   public float avgScore() {
+      //int sum = 0;
+      float avg = 0.0f;
+      
+      /*for(int i=0; i<this.score.length; i++) {
+         sum = sum + this.score[i];
+      }*/
+      
+      int sum = this.sumScore();
+      return avg=sum/(float)this.score.length; // ì‹¤ìˆ˜ 1ê°œ ì´ìƒ í•„ìš”
+   }
+
+   // 5. ìµœëŒ€ì ìˆ˜
+   public int maxScore() {
+      int temp = 0;
+      temp = this.score[0];
+      for(int i=0; i<this.score.length; i++) {
+         if(temp < this.score[i]) {
+            temp = this.score[i];
+         }
+      }
+      return temp;
+   }
+
+   // 6. ìµœì†Œì ìˆ˜
+   public int minScore() {
+      int temp = 0;
+      temp = this.score[0];
+      
+      for(int i=0; i<this.score.length; i++) {
+         if(temp > this.score[i]) {
+            temp = this.score[i];
+         }
+      }
+      return temp;
+   }
+
+   // 7. 90ì  ì´ìƒ ëª‡ëª…?
+   public int count90() {
+      int count = 0;
+      for(int i=0; i<this.score.length; i++) {
+         if(this.score[i]>=90) {
+            count++;
+         }
+      }
+      return count;
+   }
+   
+
 }
