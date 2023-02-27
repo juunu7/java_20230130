@@ -1,12 +1,20 @@
 package day8;
 
+import java.util.Date;
 import java.util.List;
+
+import org.bson.Document;
+import org.bson.conversions.Bson;
+
+import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.Updates;
+import com.mongodb.client.result.InsertOneResult;
 
 public interface BookDB {
 	
 	// 책등록
 	public int insertBook( Book book );
-	
+
 	// 책전체조회
 	public List<Book> selectBookList();
 	
